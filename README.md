@@ -57,6 +57,8 @@ The base total is `(topping price + diameter in cm × PHP 5.00) × quantity`.
 
 The size charge is PHP 5.00 per centimeter. `SPECIAL_PIZZA.calculatePrice()` adds PHP 50.00 per pizza after the regular price and discount.
 
+Prices are rounded to two decimal places and stored before billing. Special orders store the total including the surcharge. Invalid numeric input is requested again, payment must be finite and greater than the rounded amount due, and the program exits when input ends.
+
 ## Order and class flow:
 
 The classes pass the selected pizza through the order and billing steps:

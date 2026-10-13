@@ -38,6 +38,10 @@ public class PIZZA extends PizzaBase implements Discountable {
     public int getHowMany() { return howMany; }
     public double getPrice() { return price; }
 
+    protected void setPrice(double x) {
+        price = Math.floor(x * 100 + 0.5) / 100;
+    }
+
     public double getDiscountRate() {
         if (discount.equalsIgnoreCase("Senior Citizen")) return .20;
         if (discount.equalsIgnoreCase("VIPCard")) return .12;
@@ -53,6 +57,7 @@ public class PIZZA extends PizzaBase implements Discountable {
 
         price = (topping + diameter * 2.54 * 5) * howMany;
         price -= price * getDiscountRate();
+        setPrice(price);
 
         return price;
     }

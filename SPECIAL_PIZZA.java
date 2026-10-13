@@ -6,6 +6,7 @@ public class SPECIAL_PIZZA extends PIZZA {
 
     @Override
     public double calculatePrice() {
-        return super.calculatePrice() + 50 * getHowMany();
+        setPrice(super.calculatePrice() + 50.0 * getHowMany());
+        return getPrice();
     }
 }
